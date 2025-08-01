@@ -4,11 +4,11 @@ public:
         std::stack<char> stack;
 
         for (char ch : s) {
-            // If it's an opening bracket, push it to the stack
+        
             if (ch == '(' || ch == '{' || ch == '[') {
                 stack.push(ch);
             }
-            // If it's a closing bracket, check for a match
+           
             else {
                 if (stack.empty()) {
                     return false; 
@@ -18,12 +18,11 @@ public:
                 if ((ch == ')' && top != '(') ||
                     (ch == '}' && top != '{') ||
                     (ch == ']' && top != '[')) {
-                    return false; // Mismatch
+                    return false; 
                 }
             }
         }
 
-        // The stack should be empty if all brackets are matched
         return stack.empty();
     }
 };
