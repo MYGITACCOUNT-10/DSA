@@ -14,7 +14,7 @@ public:
         return true;
     }
 
-    vector<int> getPrimeFactors(int n)
+    vector<int> primefactors(int n)
     {
         vector<int> factors;
 
@@ -45,7 +45,7 @@ public:
         // prime factor -> indices divisible by it
         for(int i = 0; i < n; i++)
         {
-            vector<int> factors = getPrimeFactors(nums[i]);
+            vector<int> factors = primefactors(nums[i]);
 
             for(auto p : factors)
             {
