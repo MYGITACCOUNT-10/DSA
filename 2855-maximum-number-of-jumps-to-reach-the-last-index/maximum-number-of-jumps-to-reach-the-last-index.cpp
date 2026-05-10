@@ -7,13 +7,13 @@ public:
         dp[0] = 0;
         for(int i = 0; i < n; i++) {
 
-            // skip unreachable index
+            //unreachable index
             if(dp[i] == -1)
                 continue;
 
             for(int j = i + 1; j < n; j++) {
                 int diff = nums[j] - nums[i];
-                // valid jump
+                // valid jump  condition
                 if(diff >= -target && diff <= target) {
                     dp[j] = max(dp[j], dp[i] + 1);
                 }
